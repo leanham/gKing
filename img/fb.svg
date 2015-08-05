@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Fretboard" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-29 488 1140 225" style="enable-background:new -29 488 1140 225;" xml:space="preserve">
+  <style type="text/css">
+    .st0{fill:#ccC;}
+    	.st1{fill:#34495E;stroke:#34495E;stroke-width:2;stroke-miterlimit:10;}
+  </style>
+  <g id="Borders">
+    <rect id="down" x="12" y="688" class="st0" width="1090" height="4" />
+    <rect id="up" x="12" y="559" class="st0" width="1090" height="4" />
+  </g>
+  <g id="Frets">
+    <rect id="00f" x="12" y="563" class="st0" width="11" height="125" />
+    <rect id="01f" x="124" y="563" class="st0" width="3" height="125" />
+    <rect id="02f" x="222" y="563" class="st0" width="3" height="125" />
+    <rect id="03f" x="313" y="563" class="st0" width="3" height="125" />
+    <rect id="04f" x="401" y="563" class="st0" width="3" height="125" />
+    <rect id="05f" x="483" y="563" class="st0" width="3" height="125" />
+    <rect id="06f" x="561" y="563" class="st0" width="3" height="125" />
+    <rect id="_07f" x="634" y="563" class="st0" width="3" height="125" />
+    <rect id="08f" x="702" y="563" class="st0" width="3" height="125" />
+    <rect id="09f" x="767" y="563" class="st0" width="3" height="125" />
+    <rect id="10f" x="827" y="563" class="st0" width="3" height="125" />
+    <rect id="11f" x="885" y="563" class="st0" width="3" height="125" />
+    <rect id="12f" x="940" y="563" class="st0" width="3" height="125" />
+    <rect id="13f" x="991" y="563" class="st0" width="3" height="125" />
+    <rect id="14f" x="1041" y="563" class="st0" width="3" height="125" />
+    <rect id="15f" x="1086" y="563" class="st0" width="3" height="125" />
+  </g>
+  <g id="Inlays">
+    <circle id="f3" class="st0" cx="271" cy="625" r="5" />
+    <circle id="f5" class="st0" cx="446" cy="625" r="5" />
+    <circle id="f7" class="st0" cx="601" cy="625" r="5" />
+    <circle id="f9" class="st0" cx="738" cy="625" r="5" />
+    <circle id="f12b" class="st0" cx="916" cy="667" r="5" />
+    <circle id="f12a" class="st0" cx="916" cy="583" r="5" />
+    <circle id="f15" class="st0" cx="1067" cy="625.2" r="5" />
+  </g>
+  <g id="Strings">
+    <line id="s6" class="st1" x1="23" y1="573" x2="1102" y2="573" />
+    <line id="s5" class="st1" x1="23" y1="594" x2="1102" y2="594" />
+    <line id="s4" class="st1" x1="23" y1="615" x2="1102" y2="615" />
+    <line id="s3" class="st1" x1="23" y1="636" x2="1102" y2="636" />
+    <line id="s2" class="st1" x1="23" y1="657" x2="1102" y2="657" />
+    <line id="s1" class="st1" x1="23" y1="678" x2="1102" y2="678" />
+  </g>
+  <g id="f">
+    <circle id="1_1" cx="72" cy="573" r="10" fill="#fecc71"/>
+    <text x="68" y="578" fill="#000">F</text>
+
+    <circle id="1_1" cx="72" cy="678" r="10" fill="#2ecc71"/>
+    <text x="68" y="685" fill="#000">F</text>
+  </g>
+</svg>
