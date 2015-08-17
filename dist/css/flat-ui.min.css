@@ -1302,7 +1302,7 @@ input[type=search]{
 label{
 	font-size:15px;
 	font-weight:400;
-	line-height:2.3
+	line-height:2.3;
 }
 
 .form-control::-moz-placeholder,.select2-search input[type=text]::-moz-placeholder{

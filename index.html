@@ -28,6 +28,7 @@
     <!--[if lt IE 9]>
     <script src="dist/js/vendor/html5shiv.js"></script>
     <script src="dist/js/vendor/respond.min.js"></script>
+
     <![endif]-->
 </head>
 
@@ -94,50 +95,64 @@
                 <!--第1个select-->
                 <select class="select select-danger select-sm " data-toggle="select" id="scaleX">
                     <!--<optgroup label="Keys"></optgroup>-->
-                    <option value="0">C</option>
-                    <option value="1">C#</option>
-                    <option value="2">Db</option>
-                    <option value="3">D</option>
-                    <option value="4">D#</option>
-                    <option value="5">Eb</option>
-                    <option value="6">E</option>
-                    <option value="7">F</option>
-                    <option value="8">F#</option>
-                    <option value="9">Gb</option>
-                    <option value="10">G</option>
-                    <option value="11">G#</option>
-                    <option value="12">Ab</option>
-                    <option value="13">A</option>
-                    <option value="14">A#</option>
-                    <option value="15">Bb</option>
-                    <option value="16">B</option>
+                    <option value="c">C</option>
+                    <option value="c#">C#</option>
+                    <option value="db">Db</option>
+                    <option value="d">D</option>
+                    <option value="d#">D#</option>
+                    <option value="eb">Eb</option>
+                    <option value="e">E</option>
+                    <option value="f">F</option>
+                    <option value="f#">F#/Gb</option>
+                    <option value="gb">Gb</option>
+                    <option value="g">G</option>
+                    <option value="g#">G#</option>
+                    <option value="ab">Ab</option>
+                    <option value="a">A</option>
+                    <option value="a#">A#</option>
+                    <option value="bb">Bb</option>
+                    <option value="B">B/Cb</option>
                 </select>
 
                 <!--第2个select-->
                 <select class="select select-danger select-sm" data-toggle="select" id="scaleY">
-                    <option value="0">Major</option>
-                    <option value="1">Minor</option>
+                    <option value="major">Major</option>
+                    <option value="minor">Minor</option>
+                    <option value="majorpentatonic">Major Pentatonic</option>
+                    <option value="minorpentatonic">Minor Pentatonic</option>
+                    <option value="harmonicminor">Harmonic Minor</option>
+                    <option value="melodicminor">Melodic Minor</option>
+                    <option value="blues">Blues</option>
+                    <option value="doubleharmonic">Flamenco</option>
+                    <option value="ionian">Ionian</option>
+                    <option value="dorian">Dorian</option>
+                    <option value="phrygian">Phrygian</option>
+                    <option value="lydian">Lydian</option>
+                    <option value="mixolydian">Mixolydian</option>
+                    <option value="aeolian">Aeolian</option>
+                    <option value="locrian">Locrian</option>
+
                 </select>
 
                 <!--button 触发-->
                 <button type="button" class="btn btn-inverse btn-sm" onclick="exeScales(this)" >Go <b class="fui-arrow-right"></b></button>
 
-                <!--这里不会 给看一下-->
                 <script type="text/javascript">
-
-                    //                    function exeScales(){
-                    //                       var x = document.getElementById("scaleX")                         /*不会定义*/
-                    //                      var y = document.getElementById("scaleY")                         /*不会定义*/
-                    //                      if (x.options.selectedIndex == 0 && y.options.selectedIndex == 0)  {  /*语法错误*/
-                    //                          getArrNumMaj(1, arrNumMaj)                                    /* 传完参数，然后咋返回，是不是 func.js 少一个返回的函数*/
-                    //                          return
-                    //                          alert(arrNumMaj)                                                         /*先输出一个msg就行了*/
-                    //                        document.getElementById("scaleX").value = 2;
-                    //                        }
                     function exeScales() {
-                        var e = document.getElementById("scaleX");
-                        var f = document.getElementById("scaleY");
-                        document.getElementById("scaleLabel").innerHTML = getArrNumMaj(e.options[e.selectedIndex].value,  f.options[f.selectedIndex].value);
+                        var x = document.getElementById("scaleX");
+                        var y = document.getElementById("scaleY");
+                        var keys = teoria.note(x.options[x.selectedIndex].value);
+
+                        document.getElementById("scaleLabel").innerHTML = printMeOut(keys.scale(y.options[y.selectedIndex].value).simple());
+                    }
+
+                    function printMeOut(result) {
+                        var str = "";
+                        for (i = 0; i < result.length; i++) {
+                            str+=result[i];
+                            str+="     ";
+                        }
+                        return str;
                     }
 
                 </script>
@@ -145,27 +160,27 @@
             </div>
         </div>
 
-        <!--************************************************************-->
-        <!-- *********************** 只看这一段 结束 *******************-->
-        <!--************************************************************-->
+        <!-- ********************************************************** -->
+        <!-- *********************** 只看这一段 结束 ******************** -->
+        <!-- ********************************************************** -->
         <!-- /row -->
 
         <div class="row demo-row">
             <div class="tile">
                 <h4 class="title">Progression<sup>3</sup></h4>
                 <select class="select select-primary select-sm" data-toggle="select">
-                    <option value="0">C</option>
-                    <option value="1">C#/Db</option>
-                    <option value="2">D</option>
-                    <option value="3">D#/Eb</option>
-                    <option value="4">E</option>
-                    <option value="5">F</option>
-                    <option value="6">F#/Gb</option>
-                    <option value="7">G</option>
-                    <option value="8">G#/Ab</option>
-                    <option value="9">A</option>
-                    <option value="10">A#/Bb</option>
-                    <option value="11">B/Cb</option>
+                    <option value="1">C</option>
+                    <option value="2">C#/Db</option>
+                    <option value="3">D</option>
+                    <option value="4">D#/Eb</option>
+                    <option value="5">E</option>
+                    <option value="6">F</option>
+                    <option value="7">F#/Gb</option>
+                    <option value="8">G</option>
+                    <option value="9">G#/Ab</option>
+                    <option value="10">A</option>
+                    <option value="11">A#/Bb</option>
+                    <option value="12">B/Cb</option>
                 </select>
 
                 <select class="select select-primary select-sm" data-toggle="select">
@@ -244,6 +259,7 @@
 <script src="dist/js/vendor/jquery.min.js"></script>
 <script src="dist/js/flat-ui.min.js"></script>
 <script src="dist/js/func/func.js"></script>
+<script src="dist/teoria/teoria.js"></script>
 <script src="docs/assets/js/application.js"></script>
 <script type="text/javascript" src="chrome-extension://bmdblncegkenkacieihfhpjfppoconhi/in-page-script.js"></script>
 </body>

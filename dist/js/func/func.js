@@ -27,7 +27,7 @@ function getArrNumMaj(targetNum,isSharp){
 //Minor
 function getArrNumMin(targetNum,isSharp){ /*Minor*/
     var arrNum = new Array(1, 1, 1, 1, 1, 1, 1);
-    var arrResult = ["",  "",  "",  "",  "",  "",  ""];
+    var arrResult = ["", "",  "",  "",  "",  "",  ""];
     var offset =  targetNum - 1;
 
     for (i = 0; i < 7; i++) {
@@ -44,3 +44,4 @@ function getArrNumMin(targetNum,isSharp){ /*Minor*/
     }
     return arrResult ;
 }
+
