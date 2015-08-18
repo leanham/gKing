@@ -103,7 +103,7 @@
                     <option value="eb">Eb</option>
                     <option value="e">E</option>
                     <option value="f">F</option>
-                    <option value="f#">F#/Gb</option>
+                    <option value="f#">F#</option>
                     <option value="gb">Gb</option>
                     <option value="g">G</option>
                     <option value="g#">G#</option>
@@ -111,13 +111,13 @@
                     <option value="a">A</option>
                     <option value="a#">A#</option>
                     <option value="bb">Bb</option>
-                    <option value="B">B/Cb</option>
+                    <option value="B">B</option>
                 </select>
 
                 <!--第2个select-->
                 <select class="select select-danger select-sm" data-toggle="select" id="scaleY">
                     <option value="major">Major</option>
-                    <option value="minor">Minor</option>
+                    <option value="minor">minor</option>
                     <option value="majorpentatonic">Major Pentatonic</option>
                     <option value="minorpentatonic">Minor Pentatonic</option>
                     <option value="harmonicminor">Harmonic Minor</option>
@@ -150,7 +150,7 @@
                         var str = "";
                         for (i = 0; i < result.length; i++) {
                             str+=result[i];
-                            str+="     ";
+                            str+=" ";
                         }
                         return str;
                     }
@@ -168,22 +168,27 @@
         <div class="row demo-row">
             <div class="tile">
                 <h4 class="title">Progression<sup>3</sup></h4>
-                <select class="select select-primary select-sm" data-toggle="select">
-                    <option value="1">C</option>
-                    <option value="2">C#/Db</option>
-                    <option value="3">D</option>
-                    <option value="4">D#/Eb</option>
-                    <option value="5">E</option>
-                    <option value="6">F</option>
-                    <option value="7">F#/Gb</option>
-                    <option value="8">G</option>
-                    <option value="9">G#/Ab</option>
-                    <option value="10">A</option>
-                    <option value="11">A#/Bb</option>
-                    <option value="12">B/Cb</option>
+                <select class="select select-primary select-sm" data-toggle="select" id="progsX">
+                    <option value="c">C</option>
+                    <option value="c#">C#</option>
+                    <option value="db">Db</option>
+                    <option value="d">D</option>
+                    <option value="d#">D#</option>
+                    <option value="eb">Eb</option>
+                    <option value="e">E</option>
+                    <option value="f">F</option>
+                    <option value="f#">F#</option>
+                    <option value="gb">Gb</option>
+                    <option value="g">G</option>
+                    <option value="g#">G#</option>
+                    <option value="ab">Ab</option>
+                    <option value="a">A</option>
+                    <option value="a#">A#</option>
+                    <option value="bb">Bb</option>
+                    <option value="B">B</option>
                 </select>
 
-                <select class="select select-primary select-sm" data-toggle="select">
+                <select class="select select-primary select-sm" data-toggle="select" id="progsY">
                     <option value="0">Major</option>
                     <option value="1">Minor</option>
                 </select>
@@ -201,27 +206,57 @@
         <div class="row demo-row">
             <div class="tile-right">
                 <h4 class="title">Chord<sup>2</sup></h4>
-                <select class="select select-warning select-sm" data-toggle="select">
-                    <option value="0">C</option>
-                    <option value="1">C#/Db</option>
-                    <option value="2">D</option>
-                    <option value="3">D#/Eb</option>
-                    <option value="4">E</option>
-                    <option value="5">F</option>
-                    <option value="6">F#/Gb</option>
-                    <option value="7">G</option>
-                    <option value="8">G#/Ab</option>
-                    <option value="9">A</option>
-                    <option value="10">A#/Bb</option>
-                    <option value="11">B/Cb</option>
+                <select class="select select-warning select-sm" data-toggle="select" id="chordX">
+                    <option value="c">C</option>
+                    <option value="c#">C#</option>
+                    <option value="db">Db</option>
+                    <option value="d">D</option>
+                    <option value="d#">D#</option>
+                    <option value="eb">Eb</option>
+                    <option value="e">E</option>
+                    <option value="f">F</option>
+                    <option value="f#">F#</option>
+                    <option value="gb">Gb</option>
+                    <option value="g">G</option>
+                    <option value="g#">G#</option>
+                    <option value="ab">Ab</option>
+                    <option value="a">A</option>
+                    <option value="a#">A#</option>
+                    <option value="bb">Bb</option>
+                    <option value="B">B</option>
                 </select>
 
-                <select class="select select-warning select-sm" data-toggle="select">
-                    <option value="0">Major</option>
-                    <option value="1">Minor</option>
+                <select class="select select-warning select-sm" data-toggle="select" id="chordY">
+                    <option value="major">Major</option>
+                    <option value="minor">minor</option>
+                    <option value="M7">M7</option>
+                    <option value="mi7">mi7</option>
+                    <option value="7b5">7b5</option>
+                    <option value="mM7">mM7</option>
                 </select>
 
                 <button onclick="exeChords()" class="btn btn-inverse btn-sm">Go <b class="fui-arrow-right"></b></button>
+
+                <script type="text/javascript">
+                    function exeChords() {
+                        var x = document.getElementById("chordX");
+                        var y = document.getElementById("chordY");
+                        var keys = teoria.note(x.options[x.selectedIndex].value);
+
+                        document.getElementById("chordLabel").innerHTML = printMeOut(keys.chord(y.options[y.selectedIndex].value).simple());
+                    }
+
+                    function printMeOut(result) {
+                        var str = "";
+                        for (i = 0; i < result.length; i++) {
+                            str+=result[i];
+                            str+=" ";
+                        }
+                        return str;
+                    }
+
+                </script>
+                <div class="label label-warning" id="chordLabel"></div>
 
             </div>
         </div>
@@ -259,7 +294,7 @@
 <script src="dist/js/vendor/jquery.min.js"></script>
 <script src="dist/js/flat-ui.min.js"></script>
 <script src="dist/js/func/func.js"></script>
-<script src="dist/teoria/teoria.js"></script>
+<script src="dist/js/teoria/teoria.js"></script>
 <script src="docs/assets/js/application.js"></script>
 <script type="text/javascript" src="chrome-extension://bmdblncegkenkacieihfhpjfppoconhi/in-page-script.js"></script>
 </body>
